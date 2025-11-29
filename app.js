@@ -303,8 +303,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   showPage("home");
   // load sheets
   if(CONFIG.sheetId === "1bIJPmq4vJCdYnzI0DQVeiUc4Snj5vC43hB0tKnMEAkE"){
-    console.warn("Set CONFIG.sheetId to your Google Sheet ID and tab names in app.js before deploying.");
-  } else {
+    
     loadAll();
     // reload every 2 minutes for near-real-time
     setInterval(loadAll, 120000);
