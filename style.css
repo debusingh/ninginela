@@ -48,3 +48,53 @@ h1,h2{color:var(--accent);margin:8px 0}
   .map-wrap{height:420px}
   .grid-cell{font-size:12px}
 }
+
+.home-page {
+  padding: 1rem;
+}
+
+.home-block {
+  background: #fff;
+  border-radius: 12px;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.home-stats {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.home-stats .stat {
+  flex: 1;
+  padding: 0.5rem;
+  background: #fff;
+  border-radius: 12px;
+  margin: 0 4px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.home-cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+}
+
+.home-card {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  text-align: center;
+  font-size: 1rem;
+  border: none;
+  box-shadow: 0 3px 6px rgba(0,0,0,0.07);
+}
+
+.sub {
+  color: gray;
+  font-size: 0.9rem;
+}
+

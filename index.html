@@ -21,24 +21,40 @@
 
   <main id="main">
     <!-- HOME -->
-    <section id="home" class="page active">
-      <h1>Welcome to the School Carnival</h1>
-      <p class="lead">Date · Time · Venue — update via Google Sheets.</p>
-      <div class="cards">
-        <div class="card">
-          <h3>Food & Stalls</h3>
-          <p>Editable by leads in Google Sheets</p>
-        </div>
-        <div class="card">
-          <h3>Schedule</h3>
-          <p>Performance timings and stage info</p>
-        </div>
-        <div class="card">
-          <h3>Announcements</h3>
-          <p>Important notices (rain, changes, lost & found)</p>
-        </div>
-      </div>
-    </section>
+   <section id="home" class="page active home-page">
+
+  <div id="home-event-header" class="home-block">
+    <h1 id="home-date">📅 —</h1>
+    <p id="home-venue">📍 —</p>
+  </div>
+
+  <div id="home-announcement" class="home-block">
+    <h3>🔔 Latest Announcement</h3>
+    <p id="home-latest-annc">—</p>
+  </div>
+
+  <div id="home-next-event" class="home-block">
+    <h3>🎤 Next Event</h3>
+    <p id="home-next-title">—</p>
+    <span id="home-next-time" class="sub"></span>
+  </div>
+
+  <div id="home-stats" class="home-stats">
+    <div class="stat">🍴 <span id="stat-stalls">0</span><br><small>Stalls</small></div>
+    <div class="stat">🎭 <span id="stat-events">0</span><br><small>Events</small></div>
+    <div class="stat">📣 <span id="stat-annc">0</span><br><small>Announcements</small></div>
+  </div>
+
+  <!-- Feature Cards 2 per row -->
+  <div class="home-cards">
+    <button class="home-card" onclick="showPage('stalls')">🍔 Food & Stalls</button>
+    <button class="home-card" onclick="showPage('schedule')">🎤 Schedule</button>
+    <button class="home-card" onclick="showPage('map')">🗺️ View Map</button>
+    <button class="home-card" onclick="showPage('annc')">📣 Announcements</button>
+  </div>
+
+</section>
+
 
     <!-- STALLS -->
     <section id="stalls" class="page">

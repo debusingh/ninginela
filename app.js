@@ -13,11 +13,13 @@ const CONFIG = {
   sheetBase: "https://opensheet.elk.sh",
   // Put your sheetId and tab names here
   sheetId: "1bIJPmq4vJCdYnzI0DQVeiUc4Snj5vC43hB0tKnMEAkE",
-  endpoints: {
-    stalls: "Stalls",          // tab name for stalls (food/games)
-    schedule: "Schedule",      // tab name for schedule
-    announcements: "Announcements" // tab name for announcements
-  },
+endpoints: {
+   stalls: "Stalls",
+   schedule: "Schedule",
+   announcements: "Announcements",
+   home: "Home"
+}
+,
   // club cells into zones here. Use numbers 1..36 (6x6)
   zonesConfig: {
     "Entrance": [1,2],
@@ -186,19 +188,62 @@ async function fetchSheet(tab){
 }
 
 async function loadAll(){
-  // load stalls, schedule, announcements
-  const [stalls, schedule, announcements] = await Promise.all([
+  const [stalls, schedule, announcements, home] = await Promise.all([
     fetchSheet(CONFIG.endpoints.stalls),
     fetchSheet(CONFIG.endpoints.schedule),
-    fetchSheet(CONFIG.endpoints.announcements)
+    fetchSheet(CONFIG.endpoints.announcements),
+    fetchSheet(CONFIG.endpoints.home)
   ]);
+
   dataCache.stalls = stalls;
   dataCache.schedule = schedule;
   dataCache.announcements = announcements;
+  dataCache.home = home;
+
+  renderHomeDashboard();
   renderStallsList();
   renderSchedule();
   renderAnnouncements();
 }
+
+
+function renderHomeDashboard() {
+
+  /* ----------- Home Sheet Data -------------- */
+  const home = dataCache.home?.[0] || {};
+  document.getElementById("home-date").innerText =
+      `📅 ${home.date || ""} • ${home.time || ""}`;
+  document.getElementById("home-venue").innerText =
+      `📍 ${home.venue || ""}`;
+
+  /* ----------- Latest Announcement ---------- */
+  const annc = dataCache.announcements;
+  if (annc.length) {
+    document.getElementById("home-latest-annc").innerText =
+      `${annc[annc.length - 1].title} — ${annc[annc.length - 1].message}`;
+  } else {
+    document.getElementById("home-announcement").style.display = "none";
+  }
+
+  /* ----------- Next Event ------------------- */
+  const events = dataCache.schedule;
+
+  if (events.length) {
+    const next = events[0];  // assuming sheet sorted by time
+    document.getElementById("home-next-title").innerText = next.title || "";
+    document.getElementById("home-next-time").innerText =
+      `${next.time || ""} • ${next.stage || ""}`;
+  } else {
+    document.getElementById("home-next-event").style.display = "none";
+  }
+
+  /* ----------- Stats ------------------------ */
+  document.getElementById("stat-stalls").innerText = dataCache.stalls.length;
+  document.getElementById("stat-events").innerText = dataCache.schedule.length;
+  document.getElementById("stat-annc").innerText = dataCache.announcements.length;
+}
+
+
 function renderStallsList(){
   const container = document.getElementById("stalls-list");
   container.innerHTML = "";
@@ -257,7 +302,7 @@ document.addEventListener("DOMContentLoaded", ()=>{
   // initial page
   showPage("home");
   // load sheets
-  if(CONFIG.sheetId === "YOUR_GOOGLE_SHEET_ID_HERE"){
+  if(CONFIG.sheetId === "1bIJPmq4vJCdYnzI0DQVeiUc4Snj5vC43hB0tKnMEAkE"){
     console.warn("Set CONFIG.sheetId to your Google Sheet ID and tab names in app.js before deploying.");
   } else {
     loadAll();
