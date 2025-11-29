@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>School Carnival — Portal</title>
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand">Sloka Carnival</div>
+    <nav class="top-actions">
+      <button id="btn-home" class="nav-btn active">Home</button>
+      <button id="btn-stalls" class="nav-btn">Stalls</button>
+      <button id="btn-schedule" class="nav-btn">Schedule</button>
+      <button id="btn-annc" class="nav-btn">Announcements</button>
+      <button id="btn-map" class="nav-btn">Map</button>
+      <button id="btn-contact" class="nav-btn">Contact</button>
+    </nav>
+  </header>
+
+  <main id="main">
+    <!-- HOME -->
+    <section id="home" class="page active">
+      <h1>Welcome to the School Carnival</h1>
+      <p class="lead">Date · Time · Venue — update via Google Sheets.</p>
+      <div class="cards">
+        <div class="card">
+          <h3>Food & Stalls</h3>
+          <p>Editable by leads in Google Sheets</p>
+        </div>
+        <div class="card">
+          <h3>Schedule</h3>
+          <p>Performance timings and stage info</p>
+        </div>
+        <div class="card">
+          <h3>Announcements</h3>
+          <p>Important notices (rain, changes, lost & found)</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- STALLS -->
+    <section id="stalls" class="page">
+      <h2>Stalls (Food & Games)</h2>
+      <div class="filter-row">
+        <input id="stalls-search" placeholder="Search stalls or zone" />
+      </div>
+      <div id="stalls-list" class="list"></div>
+    </section>
+
+    <!-- SCHEDULE -->
+    <section id="schedule" class="page">
+      <h2>Schedule</h2>
+      <div id="schedule-list" class="list"></div>
+    </section>
+
+    <!-- ANNOUNCEMENTS -->
+    <section id="annc" class="page">
+      <h2>Announcements</h2>
+      <div id="annc-list" class="list"></div>
+    </section>
+
+    <!-- MAP -->
+    <section id="map" class="page">
+      <h2>Map</h2>
+      <div class="map-wrap">
+        <!-- Replace map.jpg with your map image. Keep same filename or edit in app.js -->
+        <img id="map-image" src="map.jpg" alt="school map" />
+        <div id="grid-overlay" class="grid-overlay"></div>
+      </div>
+      <div id="zone-info" class="zone-info">
+        <h3 id="zone-title">Select a cell</h3>
+        <div id="zone-contents"></div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="page">
+      <h2>Contact</h2>
+      <p>Teacher In-Charge: +91 XXXXX XXXXX</p>
+      <p>Email: admin@yourschool.edu</p>
+      <p>WhatsApp help: +91 XXXXX XXXXX</p>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Built for Sloka Carnival • Editable via Google Sheets</small>
+  </footer>
+
+<script src="app.js"></script>
+</body>
+</html>
