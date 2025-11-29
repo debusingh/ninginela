@@ -325,6 +325,8 @@ function parseTimeToDate(timeStr) {
 }
 
 function findNextEvent(events) {
+
+  console.log(events)
   const now = new Date();
 
   const parsed = events
