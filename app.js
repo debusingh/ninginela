@@ -227,16 +227,15 @@ function renderHomeDashboard() {
 
   /* ----------- Next Event ------------------- */
   const events = dataCache.schedule;
+  const next = findNextEvent(events);
 
-  if (events.length) {
-    const next = events[0];  // assuming sheet sorted by time
-    document.getElementById("home-next-title").innerText = next.title || "";
-    document.getElementById("home-next-time").innerText =
+if (next) {
+  document.getElementById("home-next-title").innerText = next.title || "";
+  document.getElementById("home-next-time").innerText =
       `${next.time || ""} • ${next.stage || ""}`;
-  } else {
-    document.getElementById("home-next-event").style.display = "none";
-  }
-
+} else {
+  document.getElementById("home-next-event").style.display = "none";
+}
   /* ----------- Stats ------------------------ */
   document.getElementById("stat-stalls").innerText = dataCache.stalls.length;
   document.getElementById("stat-events").innerText = dataCache.schedule.length;
@@ -309,3 +308,34 @@ document.addEventListener("DOMContentLoaded", ()=>{
     setInterval(loadAll, 120000);
   }
 });
+
+function parseTimeToDate(timeStr) {
+  // Expecting: "13:45" or "09:10"
+  if (!timeStr) return null;
+
+  const [hr, min] = timeStr.split(':').map(Number);
+  if (isNaN(hr) || isNaN(min)) return null;
+
+  const d = new Date();
+  d.setHours(hr);
+  d.setMinutes(min);
+  d.setSeconds(0);
+  d.setMilliseconds(0);
+  return d;
+}
+
+function findNextEvent(events) {
+  const now = new Date();
+
+  const parsed = events
+    .map(ev => {
+      const t = parseTimeToDate(ev.time);
+      return t ? { ...ev, _timeObj: t } : null;
+    })
+    .filter(Boolean)
+    .filter(ev => ev._timeObj > now)  // only future events
+    .sort((a, b) => a._timeObj - b._timeObj); // earliest first
+
+  return parsed.length ? parsed[0] : null;
+}
+
