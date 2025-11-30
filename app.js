@@ -284,21 +284,26 @@ function renderStallsList() {
   stalls.forEach(stall => {
     // Trim notes to 200 characters
     let notes = stall.notes || "";
-    if (notes.length > 200) {
-      notes = notes.substring(0, 200) + "...";
+    if (notes.length > 300) {
+      notes = notes.substring(0, 300) + "...";
     }
 
-    html += `
+    const el = document.createElement("div");
+    el.className = "item";
+    el.innerHTML = `<div><strong>${s.name || s.Stall}</strong><div style="color:var(--muted)">${s.type || s.Type || ""} • Zone: ${s.zone || s.Zone || "—"}</div></div><div>${s.menu ? "₹"+s.menu : ""}</div>`;
+    container.appendChild(el);
+
+    /*html += `
       <div class="stall-card">
         <h3>${stall.name || "Unnamed Stall"}</h3>
         <p><strong>Type:</strong> ${stall.type || "-"}</p>
         <p><strong>Zone:</strong> ${stall.zone || "-"}</p>
         <p><strong>Notes:</strong> ${notes}</p>
       </div>
-    `;
+    `;*/
   });
 
-  container.innerHTML += html;
+  //container.innerHTML += html;
 }
 
 function renderSchedule(){
