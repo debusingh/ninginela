@@ -341,10 +341,12 @@ document.getElementById("stalls-search").addEventListener("input", (e)=>{
            (s.menu||s.Menu||"").toLowerCase().includes(q);
   });
   if(!filtered.length) container.innerHTML = "<p>No results.</p>";
-  filtered.forEach(s=>{
+  filtered.forEach(stall=>{
     const el = document.createElement("div");
     el.className = "item";
-    el.innerHTML = `<div><strong>${s.name || s.Stall}</strong><div style="color:var(--muted)">${s.type || s.Type || ""} • Zone: ${s.zone || s.Zone || "—"}</div></div><br><div>${s.price ? s.menu : ""}</div>`;
+    //el.innerHTML = `<div><strong>${s.name || s.Stall}</strong><div style="color:var(--muted)">${s.type || s.Type || ""} • Zone: ${s.zone || s.Zone || "—"}</div></div><br><div>${s.menu ? s.menu : ""}</div>`;
+    el.innerHTML = `<div><strong>${stall.name}</strong><div style="color:var(--muted)">${stall.type || stall.Type || ""} • Zone: ${stall.zone || stall.Zone || "—"}</div><div style="margin-top:4px;">${stall.menu ? stall.menu : ""}</div></div>`;
+
     container.appendChild(el);
   });
 });
