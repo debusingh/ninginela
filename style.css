@@ -468,3 +468,65 @@ header {
 .drawer-backdrop.open {
   background: rgba(0,0,0,0.4) !important;
 }
+
+
+/* ---------------------------------------------------------
+   HEADER / NAVBAR — White bar + Blue text/icons
+--------------------------------------------------------- */
+.topbar {
+  background: #ffffff !important;     /* White bar */
+  color: #2563EB !important;          /* Blue text */
+  border-bottom: 1px solid #e5e7eb;   /* subtle divider */
+  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+/* Brand Text (School Carnival) */
+.topbar .brand,
+.brand {
+  color: #2563EB !important;          /* Blue */
+  font-weight: 600 !important;
+}
+
+/* Hamburger Menu Icon */
+.menu-btn {
+  color: #2563EB !important;          /* Blue */
+  font-size: 1.8rem !important;
+}
+
+/* ---------------------------------------------------------
+   DRAWER MENU — Blue background + White text
+--------------------------------------------------------- */
+.drawer {
+  background: #1E40AF !important;      /* Blue drawer */
+  color: #ffffff !important;
+  border-left: none !important;
+}
+
+/* Drawer Header (top strip of drawer) */
+.drawer-header {
+  background: #1E3A8A !important;      /* Darker blue */
+  color: #ffffff !important;
+}
+
+/* Close (X) button */
+.drawer-close {
+  color: #ffffff !important;
+}
+
+/* Drawer Menu Items */
+.drawer-item {
+  background: transparent !important;
+  color: #ffffff !important;           /* White text */
+  border-bottom: 1px solid rgba(255,255,255,0.2) !important;
+}
+
+/* Hover effect */
+.drawer-item:hover {
+  background: rgba(255,255,255,0.15) !important;
+  color: #ffffff !important;
+}
+
+/* Drawer backdrop */
+.drawer-backdrop.open {
+  background: rgba(0,0,0,0.45) !important;
+}

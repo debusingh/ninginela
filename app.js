@@ -269,7 +269,7 @@ if (next) {
 
 
 function renderStallsList() {
-  const container = document.getElementById("page-stalls");
+  const container = document.getElementById("stalls-list");
   container.innerHTML = "<h2>Stalls</h2>";
 
   // Sort stalls alphabetically by name
