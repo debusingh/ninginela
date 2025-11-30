@@ -290,7 +290,7 @@ function renderStallsList() {
 
     const el = document.createElement("div");
     el.className = "item";
-    el.innerHTML = `<div><strong>${stall.name}</strong><div style="color:var(--muted)">${stall.type || stall.Type || ""} • Zone: ${stall.zone || stall.Zone || "—"}</div></div><div style="margin-top:4px;">${stall.menu ? stall.menu : ""}</div>`;
+    el.innerHTML = `<div><strong>${stall.name}</strong><div style="color:var(--muted)">${stall.type || stall.Type || ""} • Zone: ${stall.zone || stall.Zone || "—"}</div><div style="margin-top:4px;">${stall.menu ? stall.menu : ""}</div></div>`;
     container.appendChild(el);
 
     /*html += `
@@ -337,7 +337,8 @@ document.getElementById("stalls-search").addEventListener("input", (e)=>{
   const filtered = dataCache.stalls.filter(s=>{
     return (s.name||s.Stall||"").toLowerCase().includes(q) ||
            (s.zone||s.Zone||"").toLowerCase().includes(q) ||
-           (s.type||s.Type||"").toLowerCase().includes(q);
+           (s.type||s.Type||"").toLowerCase().includes(q) ||
+           (s.menu||s.Menu||"").toLowerCase().includes(q);
   });
   if(!filtered.length) container.innerHTML = "<p>No results.</p>";
   filtered.forEach(s=>{
