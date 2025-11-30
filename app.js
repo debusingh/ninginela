@@ -213,8 +213,17 @@ function renderHomeDashboard() {
   const home = dataCache.home?.[0] || {};
   document.getElementById("home-date").innerText =
       `📅 ${home.date || ""} • ${home.time || ""}`;
-  document.getElementById("home-venue").innerText =
-      `📍 ${home.venue || ""}`;
+  /* ----------- Venue with Google Maps Link ----------- */
+  const venueLink = document.getElementById("home-venue-link");
+
+  if (home.maps) {
+    venueLink.href = home.maps;          // clickable maps URL
+    venueLink.innerText = `📍 ${home.venue || "Open in Google Maps"}`;
+  } else {
+    // if maps URL missing, show plain text
+    venueLink.removeAttribute("href");
+    venueLink.innerText = `📍 ${home.venue || ""}`; 
+  }
 
   /* ----------- Latest Announcement ---------- */
   const annc = dataCache.announcements;
@@ -326,7 +335,6 @@ function parseTimeToDate(timeStr) {
 
 function findNextEvent(events) {
 
-  console.log(events)
   const now = new Date();
 
   const parsed = events
