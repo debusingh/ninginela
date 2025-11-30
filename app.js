@@ -334,6 +334,33 @@ document.addEventListener("DOMContentLoaded", ()=>{
   }
 });
 
+/* Drawer Logic */
+const drawer = document.getElementById("drawer");
+const drawerBackdrop = document.getElementById("drawer-backdrop");
+const menuBtn = document.getElementById("menu-btn");
+const drawerClose = document.getElementById("drawer-close");
+
+function openDrawer() {
+  drawer.classList.add("open");
+  drawerBackdrop.classList.add("open");
+}
+
+function closeDrawer() {
+  drawer.classList.remove("open");
+  drawerBackdrop.classList.remove("open");
+}
+
+menuBtn.addEventListener("click", openDrawer);
+drawerClose.addEventListener("click", closeDrawer);
+drawerBackdrop.addEventListener("click", closeDrawer);
+
+// Called when tapping an item in the drawer
+function navigateAndClose(page) {
+  showPage(page);
+  closeDrawer();
+}
+/*--End Drawer Logic*/
+
 function parseTimeToDate(timeStr) {
   // Expecting: "13:45" or "09:10"
   if (!timeStr) return null;

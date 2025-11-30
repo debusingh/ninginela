@@ -10,14 +10,30 @@
   <header class="topbar">
     <div class="brand">Sloka Carnival</div>
     <nav class="top-actions">
-      <button id="btn-home" class="nav-btn active">Home</button>
-      <button id="btn-stalls" class="nav-btn">Stalls</button>
-      <button id="btn-schedule" class="nav-btn">Schedule</button>
-      <button id="btn-annc" class="nav-btn">Announcements</button>
-      <button id="btn-map" class="nav-btn">Map</button>
-      <button id="btn-contact" class="nav-btn">Contact</button>
+      <button id="menu-btn" class="menu-btn">☰</button>
     </nav>
+
   </header>
+
+  <!-- Right Slide Drawer -->
+<div id="drawer" class="drawer">
+  <div class="drawer-header">
+    <span>Menu</span>
+    <button id="drawer-close" class="drawer-close">✕</button>
+  </div>
+
+  <div class="drawer-menu">
+    <button class="drawer-item" onclick="navigateAndClose('home')">🏠 Home</button>
+    <button class="drawer-item" onclick="navigateAndClose('stalls')">🍔 Stalls</button>
+    <button class="drawer-item" onclick="navigateAndClose('schedule')">🎤 Schedule</button>
+    <button class="drawer-item" onclick="navigateAndClose('annc')">📣 Announcements</button>
+    <button class="drawer-item" onclick="navigateAndClose('map')">🗺️ Map</button>
+    <button class="drawer-item" onclick="navigateAndClose('contact')">📞 Contact</button>
+  </div>
+</div>
+
+<!-- Backdrop for drawer -->
+<div id="drawer-backdrop" class="drawer-backdrop"></div>
 
   <main id="main">
     <!-- HOME -->

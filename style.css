@@ -124,4 +124,83 @@ h1,h2{color:var(--accent);margin:8px 0}
   background: #2563eb;
 }
 
+/* Header menu button */
+.menu-btn {
+  font-size: 1.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.3rem 0.6rem;
+}
+
+/* Drawer Backdrop */
+.drawer-backdrop {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  background: rgba(0,0,0,0.4);
+  display: none;
+  z-index: 9;
+}
+
+/* Drawer Panel */
+.drawer {
+  position: fixed;
+  top: 0;
+  right: -260px; /* Hidden offscreen */
+  width: 260px;
+  height: 100%;
+  background: #fff;
+  box-shadow: -3px 0 8px rgba(0,0,0,0.2);
+  z-index: 10;
+  transition: right 0.3s ease;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Drawer visible */
+.drawer.open {
+  right: 0;
+}
+
+.drawer-backdrop.open {
+  display: block;
+}
+
+/* Drawer header */
+.drawer-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  font-size: 1.2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.drawer-close {
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+/* Drawer menu items */
+.drawer-menu {
+  display: flex;
+  flex-direction: column;
+  padding: 1rem;
+}
+
+.drawer-item {
+  text-align: left;
+  background: none;
+  border: none;
+  padding: 0.9rem 0;
+  font-size: 1.1rem;
+  border-bottom: 1px solid #f1f1f1;
+  cursor: pointer;
+}
+
 
