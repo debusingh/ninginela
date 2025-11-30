@@ -143,7 +143,7 @@ function showZoneInfo(cell, zone){
     stalls.forEach(s=>{
       const div = document.createElement("div");
       div.className = "item";
-      div.innerHTML = `<div><strong>${s.name || s.Stall || "Unnamed"}</strong><div style="color:var(--muted)">${s.type || s.Type || ""} ${s.price ? "• ₹"+s.price : ""}</div></div>`;
+      div.innerHTML = `<div><strong>${s.name || s.Stall || "Unnamed"}</strong><div style="color:var(--muted)">${s.type || s.Type || ""} ${s.menu ? "•"+s.menu : ""}</div></div>`;
       zoneContents.appendChild(div);
     });
   }
