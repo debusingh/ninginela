@@ -214,16 +214,32 @@ function renderHomeDashboard() {
   document.getElementById("home-date").innerText =
       `📅 ${home.date || ""} • ${home.time || ""}`;
   /* ----------- Venue with Google Maps Link ----------- */
-  const venueLink = document.getElementById("home-venue-link");
+  /* ----------- Venue Map Card ----------- */
+/* ----------- Venue Map Card ----------- */
+const venueName = document.getElementById("home-venue-name");
+const venueLink = document.getElementById("home-venue-link");
+const mapCard = document.getElementById("home-map-card");
 
-  if (home.maps) {
-    venueLink.href = home.maps;          // clickable maps URL
-    venueLink.innerText = `📍 ${home.venue || "Open in Google Maps"}`;
-  } else {
-    // if maps URL missing, show plain text
-    venueLink.removeAttribute("href");
-    venueLink.innerText = `📍 ${home.venue || ""}`; 
-  }
+// If no venue provided → hide entire card
+if (!home.venue && !home.maps) {
+  mapCard.style.display = "none";
+  return;
+}
+
+// Show venue name
+venueName.innerText = home.venue || "Venue";
+
+// If Google Maps link exists → show button
+if (home.maps && home.maps.trim() !== "") {
+  venueLink.href = home.maps;
+  venueLink.style.display = "inline-block";
+}
+// If NO maps URL → hide button but keep venue visible
+else {
+  venueLink.style.display = "none";
+}
+
+
 
   /* ----------- Latest Announcement ---------- */
   const annc = dataCache.announcements;
