@@ -389,3 +389,14 @@ h2, h3 {
   margin-bottom: 0.6rem;
   color: var(--earth-dark);
 }
+
+.home-block,
+.card,
+.stall-card,
+.schedule-card,
+.announcement-card,
+.map-card {
+  display: block;        /* FORCE vertical layout */
+  width: 100%;
+  box-sizing: border-box;
+}

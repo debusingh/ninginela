@@ -31,7 +31,7 @@ endpoints: {
   },
   gridRows: 6,
   gridCols: 6,
-  mapImage: "map.jpg"
+  mapImage: "map_with_grid_names.png"
 };
 
 /* -- END CONFIG -- */
