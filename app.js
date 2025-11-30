@@ -392,3 +392,8 @@ function findNextEvent(events) {
   return parsed.length ? parsed[0] : null;
 }
 
+document.getElementById("brand-link").addEventListener("click", () => {
+    showPage("home");   // navigate to Home Page
+});
+
+

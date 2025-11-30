@@ -171,12 +171,14 @@ h1,h2{color:var(--accent);margin:8px 0}
 
 /* Drawer header */
 .drawer-header {
+  padding: 1.2rem;
+  font-size: 1.3rem;
+  font-weight: 600;
+  background: var(--earth-primary);   /* Earth brown */
+  color: white;                       /* White text */
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem;
-  font-size: 1.2rem;
-  border-bottom: 1px solid #eee;
 }
 
 .drawer-close {
@@ -194,14 +196,20 @@ h1,h2{color:var(--accent);margin:8px 0}
 }
 
 .drawer-item {
-  text-align: left;
   background: none;
   border: none;
-  padding: 0.9rem 0;
+  width: 100%;
+  padding: 1rem 1.2rem;
   font-size: 1.1rem;
-  border-bottom: 1px solid #f1f1f1;
-  cursor: pointer;
+  color: var(--text-dark); /* Dark, clean text */
+  text-align: left;
+  border-bottom: 1px solid var(--divider);
 }
+
+.drawer-item:hover {
+  background: var(--sky-light); /* Sky highlight */
+}
+
 /* ---------------------------------------------------
    SKY + EARTH THEME : GLOBAL DESIGN TOKENS
 --------------------------------------------------- */
@@ -239,9 +247,9 @@ body {
    HEADER (Gradient Sky → Earth)
 --------------------------------------------------- */
 header {
-  background: linear-gradient(to right, var(--sky-primary), var(--earth-primary));
+  background: var(--sky-dark); /* Deep Sky Blue */
   padding: 1rem 1.5rem;
-  color: var(--text-light);
+  color: white;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -400,3 +408,13 @@ h2, h3 {
   width: 100%;
   box-sizing: border-box;
 }
+
+.brand {
+  cursor: pointer;     /* show it is clickable */
+  user-select: none;   /* prevent accidental highlighting */
+}
+
+.brand:hover {
+  opacity: 0.85;        /* optional subtle feedback */
+}
+
