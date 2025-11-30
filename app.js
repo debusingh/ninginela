@@ -29,8 +29,8 @@ endpoints: {
     "Parking": [31,32,36],
     // add or edit zone names and associated cell numbers
   },
-  gridRows: 6,
-  gridCols: 6,
+  gridRows: 5,
+  gridCols: 5,
   mapImage: "map_with_grid_names.png"
 };
 
@@ -290,7 +290,7 @@ function renderStallsList() {
 
     const el = document.createElement("div");
     el.className = "item";
-    el.innerHTML = `<div><strong>${s.name || s.Stall}</strong><div style="color:var(--muted)">${s.type || s.Type || ""} • Zone: ${s.zone || s.Zone || "—"}</div></div><div>${s.menu ? "₹"+s.menu : ""}</div>`;
+    el.innerHTML = `<div><strong>${stall.name}</strong><div style="color:var(--muted)">${stall.type || stall.Type || ""} • Zone: ${stall.zone || stall.Zone || "—"}</div></div><div>${stall.menu ? "₹"+stall.menu : ""}</div>`;
     container.appendChild(el);
 
     /*html += `
