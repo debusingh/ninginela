@@ -290,7 +290,7 @@ function renderStallsList() {
 
     const el = document.createElement("div");
     el.className = "item";
-    el.innerHTML = `<div><strong>${stall.name}</strong><div style="color:var(--muted)">${stall.type || stall.Type || ""} • Zone: ${stall.zone || stall.Zone || "—"}</div></div><br><div>${stall.menu ? stall.menu : ""}</div>`;
+    el.innerHTML = `<div><strong>${stall.name}</strong><div style="color:var(--muted)">${stall.type || stall.Type || ""} • Zone: ${stall.zone || stall.Zone || "—"}</div></div><div><p>${stall.menu ? stall.menu : ""}</p></div>`;
     container.appendChild(el);
 
     /*html += `
