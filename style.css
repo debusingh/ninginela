@@ -418,3 +418,53 @@ h2, h3 {
   opacity: 0.85;        /* optional subtle feedback */
 }
 
+/* ---------------------------------------
+   FIX HEADER COLORS
+---------------------------------------- */
+header {
+  background: var(--sky-dark) !important;  /* Deep Sky Blue */
+  color: white !important;
+}
+
+/* Make School Carnival (brand) visible */
+.brand {
+  color: white !important;
+  cursor: pointer;
+}
+
+/* ---------------------------------------
+   FIX DRAWER (RIGHT SIDE MENU)
+---------------------------------------- */
+.drawer {
+  background: var(--earth-light) !important; /* Light earth beige */
+  color: var(--text-dark) !important;
+  border-left: 8px solid var(--sky-primary) !important;
+}
+
+/* Drawer Header Bar */
+.drawer-header {
+  background: var(--earth-primary) !important; /* Earth brown */
+  color: white !important;
+}
+
+/* Drawer Close Button (X) */
+.drawer-close {
+  color: white !important;
+}
+
+/* Drawer Menu Items */
+.drawer-item {
+  background: none !important;
+  color: var(--text-dark) !important;
+  border-bottom: 1px solid var(--divider) !important;
+}
+
+.drawer-item:hover {
+  background: var(--sky-light) !important;
+  color: var(--text-dark) !important;
+}
+
+/* Drawer Backdrop */
+.drawer-backdrop.open {
+  background: rgba(0,0,0,0.4) !important;
+}
