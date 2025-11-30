@@ -343,7 +343,7 @@ document.getElementById("stalls-search").addEventListener("input", (e)=>{
   filtered.forEach(s=>{
     const el = document.createElement("div");
     el.className = "item";
-    el.innerHTML = `<div><strong>${s.name || s.Stall}</strong><div style="color:var(--muted)">${s.type || s.Type || ""} • Zone: ${s.zone || s.Zone || "—"}</div></div><div>${s.price ? "₹"+s.price : ""}</div>`;
+    el.innerHTML = `<div><strong>${s.name || s.Stall}</strong><div style="color:var(--muted)">${s.type || s.Type || ""} • Zone: ${s.zone || s.Zone || "—"}</div></div><div>${s.price ? "₹"+s.menu : ""}</div>`;
     container.appendChild(el);
   });
 });
