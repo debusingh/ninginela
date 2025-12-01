@@ -262,9 +262,9 @@ if (next) {
   document.getElementById("home-next-event").style.display = "none";
 }
   /* ----------- Stats ------------------------ */
-  document.getElementById("stat-stalls").innerText = dataCache.stalls.length;
-  document.getElementById("stat-events").innerText = dataCache.schedule.length;
-  document.getElementById("stat-annc").innerText = dataCache.announcements.length;
+  //document.getElementById("stat-stalls").innerText = dataCache.stalls.length;
+  //document.getElementById("stat-events").innerText = dataCache.schedule.length;
+  //document.getElementById("stat-annc").innerText = dataCache.announcements.length;
 }
 
 

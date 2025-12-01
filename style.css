@@ -530,3 +530,12 @@ header {
 .drawer-backdrop.open {
   background: rgba(0,0,0,0.45) !important;
 }
+
+.back-btn {
+  cursor: pointer;
+  margin-right: 8px;
+  color: var(--sky-dark);
+  font-weight: bold;
+  font-size: 1.2rem;
+}
+

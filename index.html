@@ -63,11 +63,11 @@
     <span id="home-next-time" class="sub"></span>
   </div>
 
-  <div id="home-stats" class="home-stats">
+  <!--<div id="home-stats" class="home-stats">
     <div class="stat">🍴 <span id="stat-stalls">0</span><br><small>Stalls</small></div>
     <div class="stat">🎭 <span id="stat-events">0</span><br><small>Events</small></div>
     <div class="stat">📣 <span id="stat-annc">0</span><br><small>Announcements</small></div>
-  </div>
+  </div>-->
 
   <!-- Feature Cards 2 per row -->
   <div class="home-cards">
@@ -83,6 +83,10 @@
     <!-- STALLS -->
     <section id="stalls" class="page">
       <h2>Stalls (Food & Games)</h2>
+      <h2 class="page-title">
+          <span class="back-btn" onclick="showPage('home')">←</span> Stalls
+      </h2>
+
       <div class="filter-row">
         <input id="stalls-search" placeholder="Search stalls or zone" />
       </div>
@@ -92,18 +96,30 @@
     <!-- SCHEDULE -->
     <section id="schedule" class="page">
       <h2>Schedule</h2>
+      <h2 class="page-title">
+          <span class="back-btn" onclick="showPage('home')">←</span> Stalls
+      </h2>
+
       <div id="schedule-list" class="list"></div>
     </section>
 
     <!-- ANNOUNCEMENTS -->
     <section id="annc" class="page">
       <h2>Announcements</h2>
+      <h2 class="page-title">
+          <span class="back-btn" onclick="showPage('home')">←</span> Stalls
+      </h2>
+
       <div id="annc-list" class="list"></div>
     </section>
 
     <!-- MAP -->
     <section id="map" class="page">
       <h2>Map</h2>
+      <h2 class="page-title">
+          <span class="back-btn" onclick="showPage('home')">←</span> Stalls
+      </h2>
+
       <div class="map-wrap">
         <!-- Replace map.jpg with your map image. Keep same filename or edit in app.js -->
         <img id="map-image" src="map.jpg" alt="school map" />
@@ -125,7 +141,7 @@
   </main>
 
   <footer class="footer">
-    <small>Built for Sloka Carnival • Editable via Google Sheets</small>
+    <small>Built for Sloka Winter Bazaar (Ningi Nela) • Editable via Google Sheets</small>
   </footer>
 
 <script src="app.js"></script>
