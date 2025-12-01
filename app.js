@@ -29,7 +29,7 @@ endpoints: {
     "Parking": [31,32,36],
     // add or edit zone names and associated cell numbers
   },
-  gridRows: 3,
+  gridRows: 4,
   gridCols: 5,
   mapImage: "map_with_grid_names.png"
 };
