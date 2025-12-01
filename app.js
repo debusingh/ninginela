@@ -26,7 +26,7 @@ endpoints: {
     "Food Court": [7,8,13,14],
     "Games": [3,4,9,10,15],
     "Main Stage": [11,12,17],
-    "Parking": [31,32,36],
+    "NGOs": [18,19,20],
     // add or edit zone names and associated cell numbers
   },
   gridRows: 4,
