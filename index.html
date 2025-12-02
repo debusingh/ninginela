@@ -27,10 +27,9 @@
   <div class="drawer-menu">
     <button class="drawer-item" onclick="navigateAndClose('home')">🏠 Home</button>
     <button class="drawer-item" onclick="navigateAndClose('stalls')">🍔 Stalls</button>
-    <button class="drawer-item" onclick="navigateAndClose('schedule')">🎤 Schedule</button>
+    <button class="drawer-item" onclick="navigateAndClose('schedule')">🎤 Events Schedule</button>
     <button class="drawer-item" onclick="navigateAndClose('annc')">📣 Announcements</button>
-    <button class="drawer-item" onclick="navigateAndClose('map')">🗺️ Map</button>
-    <button class="drawer-item" onclick="navigateAndClose('contact')">📞 Contact</button>
+    <button class="drawer-item" onclick="navigateAndClose('bazaarzones')">🗺️ Bazaar Zones</button>
     <button class="drawer-item" onclick="navigateAndClose('emergency')">🚨 Emergency Contacts</button>
     <button class="drawer-item" onclick="navigateAndClose('dosdonts')">ℹ️ Do's & Don'ts</button>
 
@@ -69,8 +68,8 @@
   <!-- Feature Cards 2 per row -->
   <div class="home-cards">
     <button class="home-card" onclick="showPage('stalls')">🍔 Food & Stalls</button>
-    <button class="home-card" onclick="showPage('schedule')">🎤 Schedule</button>
-    <button class="home-card" onclick="showPage('map')">🗺️ View Zones</button>
+    <button class="home-card" onclick="showPage('schedule')">🎤 Events Schedule</button>
+    <button class="home-card" onclick="showPage('bazaarzones')">🗺️ Bazaar Zones</button>
     <button class="home-card" onclick="showPage('annc')">📣 Announcements</button>
     <button class="home-card" onclick="showPage('emergency')">🚨 Emergency Contacts</button>
     <button class="home-card" onclick="showPage('dosdonts')">ℹ️ Do's & Don'ts</button>
@@ -110,7 +109,7 @@
 
     <!-- SCHEDULE -->
     <section id="schedule" class="page">
-      <h2>Schedule</h2>
+      <h2>Events Schedule</h2>
       <h2 class="page-title">
           <span class="back-btn" onclick="showPage('home')">←</span>
       </h2>
@@ -129,8 +128,9 @@
     </section>
 
     <!-- MAP -->
-    <section id="map" class="page">
-      <h2>Map</h2>
+    <section id="bazaarzones" class="page">
+       <h2>Bazaar Zones</h2>
+
       <h2 class="page-title">
           <span class="back-btn" onclick="showPage('home')">←</span>
       </h2>
@@ -145,13 +145,6 @@
       </div>-->
     </section>
 
-    <!-- CONTACT -->
-    <section id="contact" class="page">
-      <h2>Contact</h2>
-      <p>Teacher In-Charge: +91 XXXXX XXXXX</p>
-      <p>Email: admin@yourschool.edu</p>
-      <p>WhatsApp help: +91 XXXXX XXXXX</p>
-    </section>
 
     <!-- EMERGENCY CONTACTS -->
 <section id="emergency" class="page">

@@ -45,8 +45,7 @@ const pages = {
   stalls: document.getElementById("stalls"),
   schedule: document.getElementById("schedule"),
   annc: document.getElementById("annc"),
-  map: document.getElementById("map"),
-  contact: document.getElementById("contact"),
+  bazaarzones: document.getElementById("bazaarzones"),
   emergency: document.getElementById("emergency"),   // new
   dosdonts: document.getElementById("dosdonts")      // new
 };
@@ -65,8 +64,7 @@ function showPage(id){
   else if(id === "stalls") pages.stalls.classList.add("active");
   else if(id === "schedule") pages.schedule.classList.add("active");
   else if(id === "annc") pages.annc.classList.add("active");
-  else if(id === "map") pages.map.classList.add("active");
-  else if(id === "contact") pages.contact.classList.add("active");
+  else if(id === "bazaarzones") pages.bazaarzones.classList.add("active");
   else if(id === "emergency") pages.emergency.classList.add("active");
 else if(id === "dosdonts") pages.dosdonts.classList.add("active");
 
