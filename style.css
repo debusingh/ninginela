@@ -59,6 +59,8 @@ h1,h2{color:var(--accent);margin:8px 0}
   padding: 1rem;
   margin-bottom: 1rem;
   box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+  overflow-x: hidden;
+
 }
 
 .home-stats {
@@ -537,5 +539,18 @@ header {
   color: var(--sky-dark);
   font-weight: bold;
   font-size: 1.2rem;
+}
+
+.parking-image {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+  border-radius: 10px;
+}
+
+body, html {
+  overflow-x: hidden;
 }
 

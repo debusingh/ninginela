@@ -31,7 +31,7 @@ endpoints: {
   },
   gridRows: 0,
   gridCols: 0,
-  mapImage: "map.png"
+  mapImage: "map.jpg"
 };
 
 /* -- END CONFIG -- */
