@@ -22,16 +22,16 @@ endpoints: {
 ,
   // club cells into zones here. Use numbers 1..36 (6x6)
   zonesConfig: {
-    "Entrance": [1,2],
+   /* "Entrance": [1,2],
     "Food Court": [7,8,13,14],
     "Games": [3,4,9,10,15],
     "Main Stage": [11,12,17],
-    "NGOs": [18,19,20],
+    "NGOs": [18,19,20],*/
     // add or edit zone names and associated cell numbers
   },
-  gridRows: 4,
-  gridCols: 5,
-  mapImage: "map_with_grid_names.png"
+  gridRows: 0,
+  gridCols: 0,
+  mapImage: "map.png"
 };
 
 /* -- END CONFIG -- */
