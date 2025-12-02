@@ -104,6 +104,15 @@ h1,h2{color:var(--accent);margin:8px 0}
   border-left: 5px solid #3b82f6; /* blue stripe */
 }
 
+/* Emergency & Do's & Don'ts styles */
+.dosdonts-grid{ display:grid; grid-template-columns:1fr; gap:8px; }
+@media(min-width:700px){ .dosdonts-grid{ grid-template-columns:1fr 1fr; } }
+
+.dosdonts-card{ padding:10px; border-left:6px solid var(--sky-primary); }
+
+.item .btn { text-decoration:none; padding:6px 10px; border-radius:8px; font-weight:600; }
+
+
 .venue-name {
   font-size: 1.1rem;
   margin: 0.2rem 0 0.6rem 0;

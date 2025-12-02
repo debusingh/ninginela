@@ -13,13 +13,14 @@ const CONFIG = {
   sheetBase: "https://opensheet.elk.sh",
   // Put your sheetId and tab names here
   sheetId: "1bIJPmq4vJCdYnzI0DQVeiUc4Snj5vC43hB0tKnMEAkE",
-endpoints: {
-   stalls: "Stalls",
-   schedule: "Schedule",
-   announcements: "Announcements",
-   home: "Home"
-}
-,
+  endpoints: {
+    stalls: "Stalls",
+    schedule: "Schedule",
+    announcements: "Announcements",
+    home: "Home",
+    emergency: "Emergency",    // new
+    dosdonts: "DosDonts"       // new (choose exact tab name)
+  },
   // club cells into zones here. Use numbers 1..36 (6x6)
   zonesConfig: {
    /* "Entrance": [1,2],
@@ -36,7 +37,7 @@ endpoints: {
 
 /* -- END CONFIG -- */
 
-let dataCache = { stalls:[], schedule:[], announcements:[] };
+let dataCache = { stalls:[], schedule:[], announcements:[], emergency: [], dosdonts: [] };
 
 // UI Bindings
 const pages = {
@@ -45,8 +46,11 @@ const pages = {
   schedule: document.getElementById("schedule"),
   annc: document.getElementById("annc"),
   map: document.getElementById("map"),
-  contact: document.getElementById("contact")
+  contact: document.getElementById("contact"),
+  emergency: document.getElementById("emergency"),   // new
+  dosdonts: document.getElementById("dosdonts")      // new
 };
+
 document.querySelectorAll(".nav-btn").forEach(btn=>{
   btn.addEventListener("click", () => {
     document.querySelectorAll(".nav-btn").forEach(b=>b.classList.remove("active"));
@@ -63,6 +67,9 @@ function showPage(id){
   else if(id === "annc") pages.annc.classList.add("active");
   else if(id === "map") pages.map.classList.add("active");
   else if(id === "contact") pages.contact.classList.add("active");
+  else if(id === "emergency") pages.emergency.classList.add("active");
+else if(id === "dosdonts") pages.dosdonts.classList.add("active");
+
 }
 
 // Build grid overlay
@@ -188,23 +195,30 @@ async function fetchSheet(tab){
 }
 
 async function loadAll(){
-  const [stalls, schedule, announcements, home] = await Promise.all([
+  const [stalls, schedule, announcements, home, emergency, dosdonts] = await Promise.all([
     fetchSheet(CONFIG.endpoints.stalls),
     fetchSheet(CONFIG.endpoints.schedule),
     fetchSheet(CONFIG.endpoints.announcements),
-    fetchSheet(CONFIG.endpoints.home)
+    fetchSheet(CONFIG.endpoints.home),
+    fetchSheet(CONFIG.endpoints.emergency),
+    fetchSheet(CONFIG.endpoints.dosdonts)
   ]);
 
   dataCache.stalls = stalls;
   dataCache.schedule = schedule;
   dataCache.announcements = announcements;
   dataCache.home = home;
+  dataCache.emergency = emergency;
+  dataCache.dosdonts = dosdonts;
 
   renderHomeDashboard();
   renderStallsList();
   renderSchedule();
   renderAnnouncements();
+  renderEmergencies();   // new
+  renderDosDonts();      // new
 }
+
 
 
 function renderHomeDashboard() {
@@ -328,6 +342,68 @@ function renderAnnouncements(){
     container.appendChild(el);
   });
 }
+
+function renderEmergencies(){
+  // Create container or update existing one
+  const container = document.getElementById("emergency-list");
+  if(!container) return;
+  container.innerHTML = "<h2>Emergency Contacts</h2>";
+
+  const items = dataCache.emergency || [];
+  if(!items.length){
+    container.innerHTML += "<p>No emergency contacts available.</p>";
+    return;
+  }
+
+  // Expect sheet to have columns like: name, role, phone, notes
+  items.forEach(it=>{
+    const el = document.createElement("div");
+    el.className = "item";
+    const phone = it.phone || it.Phone || it.contact || it.Contact || "";
+    const role = it.role || it.Role || it.designation || "";
+    const notes = it.notes || it.Notes || "";
+
+    el.innerHTML = `<div>
+      <strong>${it.name || it.Name || "Unnamed"}</strong>
+      <div style="color:var(--muted)">${role} ${phone ? "• " + phone : ""}</div>
+      <div style="margin-top:6px;color:var(--muted);font-size:0.95rem">${notes}</div>
+    </div>
+    <div style="text-align:right">
+      ${phone ? `<a href="tel:${phone.replace(/\s+/g,'')}" class="btn">Call</a>` : ""}
+    </div>`;
+    container.appendChild(el);
+  });
+}
+
+function renderDosDonts(){
+  const container = document.getElementById("dosdonts-list");
+  if(!container) return;
+  container.innerHTML = "<h2>Do's & Don'ts</h2>";
+
+  const items = dataCache.dosdonts || [];
+  if(!items.length){
+    container.innerHTML += "<p>No guidelines available.</p>";
+    return;
+  }
+
+  // If the sheet uses 'type' (Do / Dont) and 'text'
+  // fallback: accept columns like 'item' or 'text' and optional 'type'
+  const ul = document.createElement("div");
+  ul.className = "dosdonts-grid";
+
+  items.forEach(it=>{
+    const t = ((it.type || it.Type||"") + "").toLowerCase();
+    const txt = it.text || it.Text || it.guideline || it.Guideline || it.item || it.Item || "";
+    const badge = t.includes("do") ? "✅ Do" : (t.includes("dont")||t.includes("don't") ? "⛔ Don't" : "");
+    const card = document.createElement("div");
+    card.className = "card dosdonts-card";
+    card.innerHTML = `<div style="font-weight:700">${badge ? badge + " — " : ""}${txt}</div>`;
+    ul.appendChild(card);
+  });
+
+  container.appendChild(ul);
+}
+
 
 // Quick search
 document.getElementById("stalls-search").addEventListener("input", (e)=>{

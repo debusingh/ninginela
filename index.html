@@ -31,6 +31,9 @@
     <button class="drawer-item" onclick="navigateAndClose('annc')">📣 Announcements</button>
     <button class="drawer-item" onclick="navigateAndClose('map')">🗺️ Map</button>
     <button class="drawer-item" onclick="navigateAndClose('contact')">📞 Contact</button>
+    <button class="drawer-item" onclick="navigateAndClose('emergency')">🚨 Emergency Contacts</button>
+    <button class="drawer-item" onclick="navigateAndClose('dosdonts')">ℹ️ Do's & Don'ts</button>
+
   </div>
 </div>
 
@@ -69,10 +72,12 @@
     <button class="home-card" onclick="showPage('schedule')">🎤 Schedule</button>
     <button class="home-card" onclick="showPage('map')">🗺️ View Zones</button>
     <button class="home-card" onclick="showPage('annc')">📣 Announcements</button>
+    <button class="home-card" onclick="showPage('emergency')">🚨 Emergency Contacts</button>
+    <button class="home-card" onclick="showPage('dosdonts')">ℹ️ Do's & Don'ts</button>
   </div>
 
 
-    <div id="home-event-header" class="home-block">
+  <div id="home-venue-parking" class="home-block">
       <h3>🗺️ Venue & Parking </h3>
       <img src="parking.jpg" alt="Parking Location" class="parking-image">
       <p id="home-venue-name" class="venue-name">Venue loading...</p>
@@ -144,6 +149,25 @@
       <p>Email: admin@yourschool.edu</p>
       <p>WhatsApp help: +91 XXXXX XXXXX</p>
     </section>
+
+    <!-- EMERGENCY CONTACTS -->
+<section id="emergency" class="page">
+  <h2>Emergency Contacts</h2>
+  <h2 class="page-title">
+      <span class="back-btn" onclick="showPage('home')">←</span>
+  </h2>
+  <div id="emergency-list" class="list"></div>
+</section>
+
+<!-- DO'S & DON'TS -->
+<section id="dosdonts" class="page">
+  <h2>Do's & Don'ts</h2>
+  <h2 class="page-title">
+      <span class="back-btn" onclick="showPage('home')">←</span>
+  </h2>
+  <div id="dosdonts-list" class="list"></div>
+</section>
+
   </main>
 
   <footer class="footer">
