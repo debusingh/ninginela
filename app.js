@@ -378,6 +378,7 @@ function renderEmergencies(){
 function renderDosDonts(){
   const container = document.getElementById("dosdonts-list");
   if(!container) return;
+
   container.innerHTML = "<h2>Do's & Don'ts</h2>";
 
   const items = dataCache.dosdonts || [];
@@ -386,22 +387,46 @@ function renderDosDonts(){
     return;
   }
 
-  // If the sheet uses 'type' (Do / Dont) and 'text'
-  // fallback: accept columns like 'item' or 'text' and optional 'type'
-  const ul = document.createElement("div");
-  ul.className = "dosdonts-grid";
+  // Separate into Do and Don't groups
+  const dos = [];
+  const donts = [];
 
-  items.forEach(it=>{
-    const t = ((it.type || it.Type||"") + "").toLowerCase();
-    const txt = it.text || it.Text || it.guideline || it.Guideline || it.item || it.Item || "";
-    const badge = t.includes("do") ? "✅ Do" : (t.includes("dont")||t.includes("don't") ? "⛔ Don't" : "");
-    const card = document.createElement("div");
-    card.className = "card dosdonts-card";
-    card.innerHTML = `<div style="font-weight:700">${badge ? badge + " — " : ""}${txt}</div>`;
-    ul.appendChild(card);
+  items.forEach(it => {
+    const t = (it.type || it.Type || "").toLowerCase();
+    const txt = it.text || it.Text || it.item || it.Item || "";
+
+    if (!txt) return;
+
+    if (t.includes("do") && !t.includes("don't") && !t.includes("dont")) {
+      dos.push(txt);
+    } else if (t.includes("dont") || t.includes("don't")) {
+      donts.push(txt);
+    }
   });
 
-  container.appendChild(ul);
+  // Build DO's card
+  if (dos.length) {
+    const cardDo = document.createElement("div");
+    cardDo.className = "home-block";
+    cardDo.style.borderLeft = "6px solid #16A34A"; // green stripe
+    cardDo.innerHTML = `
+      <h3>✅ Do's</h3>
+      <ul>${dos.map(d => `<li>${d}</li>`).join("")}</ul>
+    `;
+    container.appendChild(cardDo);
+  }
+
+  // Build DON'Ts card
+  if (donts.length) {
+    const cardDont = document.createElement("div");
+    cardDont.className = "home-block";
+    cardDont.style.borderLeft = "6px solid #DC2626"; // red stripe
+    cardDont.innerHTML = `
+      <h3>⛔ Don'ts</h3>
+      <ul>${donts.map(d => `<li>${d}</li>`).join("")}</ul>
+    `;
+    container.appendChild(cardDont);
+  }
 }
 
 

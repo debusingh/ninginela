@@ -563,3 +563,12 @@ body, html {
   overflow-x: hidden;
 }
 
+#dosdonts-list ul {
+  padding-left: 18px;
+  margin-top: 8px;
+}
+
+#dosdonts-list li {
+  margin-bottom: 6px;
+  line-height: 1.4rem;
+}
