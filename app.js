@@ -77,7 +77,7 @@ const overlay = document.getElementById("grid-overlay");
 const mapImg = document.getElementById("map-image");
 mapImg.src = CONFIG.mapImage; // replaceable file
 
-function buildGrid(){
+/*function buildGrid(){
   overlay.innerHTML = "";
   const rows = CONFIG.gridRows;
   const cols = CONFIG.gridCols;
@@ -111,13 +111,13 @@ function buildGrid(){
       n++;
     }
   }
-}
+}*/
 
-mapImg.addEventListener("load", buildGrid);
-window.addEventListener("resize", buildGrid);
+//mapImg.addEventListener("load", buildGrid);
+//window.addEventListener("resize", buildGrid);
 
 // helper: find zone name for a cell number
-function zoneForCell(num){
+/*function zoneForCell(num){
   for(const [z,arr] of Object.entries(CONFIG.zonesConfig)){
     if(arr.includes(Number(num))) return z;
   }
@@ -129,9 +129,9 @@ function onCellClick(e){
   const zone = zoneForCell(cell);
   showZoneInfo(cell, zone);
 }
-
+*/
 // Show zone info panel
-const zoneTitle = document.getElementById("zone-title");
+/*const zoneTitle = document.getElementById("zone-title");
 const zoneContents = document.getElementById("zone-contents");
 function showZoneInfo(cell, zone){
   zoneTitle.innerText = zone ? `${zone} (Cell ${cell})` : `Cell ${cell} — No Zone`;
@@ -178,7 +178,7 @@ function showZoneInfo(cell, zone){
   if(!stalls.length && !schedule.length && !annc.length){
     zoneContents.innerHTML += "<p>No entries in Sheets for this zone yet.</p>";
   }
-}
+}*/
 
 // Fetching google sheets (opensheet)
 async function fetchSheet(tab){
