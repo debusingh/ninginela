@@ -550,14 +550,7 @@ header {
   font-size: 1.2rem;
 }
 
-.parking-image {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-  border-radius: 10px;
-}
+
 
 body, html {
   overflow-x: hidden;
@@ -571,4 +564,16 @@ body, html {
 #dosdonts-list li {
   margin-bottom: 6px;
   line-height: 1.4rem;
+}
+
+.home-venue-section {
+  margin: 1rem 0;
+}
+
+.parking-image-full {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 12px;
+  margin-top: 8px;
 }
