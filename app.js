@@ -284,7 +284,7 @@ if (next) {
 
 function renderStallsList() {
   const container = document.getElementById("stalls-list");
-  container.innerHTML = "<h2>Stalls</h2>";
+  //container.innerHTML = "<h2>Stalls</h2>";
 
   // Sort stalls alphabetically by name
   const stalls = dataCache.stalls.sort((a, b) => {
@@ -347,7 +347,7 @@ function renderEmergencies(){
   // Create container or update existing one
   const container = document.getElementById("emergency-list");
   if(!container) return;
-  container.innerHTML = "<h2>Emergency Contacts</h2>";
+  //container.innerHTML = "<h2>Emergency Contacts</h2>";
 
   const items = dataCache.emergency || [];
   if(!items.length){
@@ -379,7 +379,7 @@ function renderDosDonts(){
   const container = document.getElementById("dosdonts-list");
   if(!container) return;
 
-  container.innerHTML = "<h2>Do's & Don'ts</h2>";
+  //container.innerHTML = "<h2>Do's & Don'ts</h2>";
 
   const items = dataCache.dosdonts || [];
   if(!items.length){
