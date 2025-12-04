@@ -284,6 +284,7 @@ function renderStallsList() {
   const container = document.getElementById("stalls-list");
   //container.innerHTML = "<h2>Stalls</h2>";
 
+
   // Sort stalls alphabetically by name
   const stalls = dataCache.stalls.sort((a, b) => {
     const nameA = (a.name || "").toLowerCase();
@@ -300,9 +301,15 @@ function renderStallsList() {
       notes = notes.substring(0, 300) + "...";
     }
 
+    const stallNumber = stall.stall || stall.Stall || "";
+
+
     const el = document.createElement("div");
     el.className = "item";
-    el.innerHTML = `<div><strong>${stall.name}</strong><div style="color:var(--muted)">${stall.type || stall.Type || ""} • Zone: ${stall.zone || stall.Zone || "—"}</div><div style="margin-top:4px;">${stall.menu ? stall.menu : ""}</div></div>`;
+    el.innerHTML = `<div>
+                        <strong>${stall.name}</strong>
+                        <div style="color:var(--muted)">${stall.type || stall.Type || ""} • Zone: ${stall.zone || stall.Zone || "—"} • Stall #: ${stallNumber || "—"}</div>
+                        <div style="margin-top:4px;">${stall.menu ? stall.menu : ""}</div></div>`;
     container.appendChild(el);
 
     /*html += `
