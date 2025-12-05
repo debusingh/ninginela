@@ -355,6 +355,7 @@ function renderEmergencies(){
   const container = document.getElementById("emergency-list");
   if(!container) return;
   //container.innerHTML = "<h2>Emergency Contacts</h2>";
+  container.innerHTML = "";
 
   const items = dataCache.emergency || [];
   if(!items.length){
@@ -385,6 +386,8 @@ function renderEmergencies(){
 function renderDosDonts(){
   const container = document.getElementById("dosdonts-list");
   if(!container) return;
+
+  container.innerHTML = "";
 
   //container.innerHTML = "<h2>Do's & Don'ts</h2>";
 
