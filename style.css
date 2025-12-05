@@ -268,7 +268,7 @@ header {
 }
 
 .brand {
-  font-family: 'Rastanty Cortez', cursive;
+  font-family: 'Allura', cursive;
   font-size: 2.1rem;
   letter-spacing: 1px;
   color: #fff;
@@ -620,3 +620,14 @@ body, html {
   z-index: 10;
 }
 
+.home-banner {
+  margin: 12px 0;
+}
+
+.banner-img {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  display: block;
+}
