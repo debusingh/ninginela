@@ -287,10 +287,10 @@ function renderStallsList() {
     const el = document.createElement("div");
     el.className = "item";
     el.innerHTML = `<div>
-                        <strong>${stall.name}</strong>
+                        <strong>${stall.name} • </strong> <strong>Stall #:</strong><span class="stall-number"> ${stallNumber || "—"}</span>
                         <div style="color:var(--muted)"><strong>Type:</strong>${stall.type || stall.Type || "--"} 
                         | <strong>Zone:</strong> <span class="zone-link" onclick="showPage('bazaarzones')">${stall.zone || stall.all.zone || stall.Zone || "—"}</span>
-                        | <strong>Stall #:</strong><span class="stall-number"> ${stallNumber || "—"}</span></div>
+                        </div>
                         <div style="margin-top:4px;">${stall.menu ? stall.menu : ""}</div></div>`;
     container.appendChild(el);
 
