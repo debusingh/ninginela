@@ -290,7 +290,7 @@ function renderStallsList() {
                         <strong>${stall.name}</strong>
                         <div style="color:var(--muted)"><strong>Type:</strong>${stall.type || stall.Type || "--"} 
                         | <strong>Zone:</strong> <span class="zone-link" onclick="showPage('bazaarzones')">${stall.zone || stall.all.zone || stall.Zone || "—"}</span>
-                        | <strong>Stall #:</strong> ${stallNumber || "—"}</div>
+                        | <strong>Stall #:</strong><span class="stall-number"> ${stallNumber || "—"}</span></div>
                         <div style="margin-top:4px;">${stall.menu ? stall.menu : ""}</div></div>`;
     container.appendChild(el);
 
@@ -314,7 +314,9 @@ function renderSchedule(){
   dataCache.schedule.forEach(s=>{
     const el = document.createElement("div");
     el.className = "item";
-    el.innerHTML = `<div><strong>${s.title}</strong><div style="color:var(--muted)">${s.time} • ${s.stage || ""}</div></div>`;
+    el.innerHTML = `<div><strong>${s.title}</strong><div style="color:var(--muted)">${s.time} • 
+                          ${s.stage || ""}
+                          </div></div>`;
     container.appendChild(el);
   });
 }

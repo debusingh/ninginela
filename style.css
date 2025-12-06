@@ -631,3 +631,9 @@ body, html {
   border-radius: 12px;
   display: block;
 }
+
+.stall-number {
+  color: #38A3EB;
+  font-weight: 600;
+}
+
