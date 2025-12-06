@@ -1,16 +1,20 @@
 <!doctype html>
 <html lang="en">
-<head>
-  <link href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-<meta charset="utf-8" />
-<meta name="viewport" content="width=device-width,initial-scale=1" />
-<title>Ningi Nela - 2025 Sloka Winter Bazaar</title>
-<link rel="stylesheet" href="style.css" />
+<head>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Baloo+2:wght@600&family=Poppins:wght@300;400;500;600;700&display=swap"
+    rel="stylesheet">
+
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Ningi Nela - 2025 Sloka Winter Bazaar</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <header class="topbar">
-<div class="brand" id="brand-link">ningi-nela</div>
+    <div class="brand" id="brand-link">ningi-nela</div>
     <nav class="top-actions">
       <button id="menu-btn" class="menu-btn">☰</button>
     </nav>
@@ -18,64 +22,45 @@
   </header>
 
   <!-- Right Slide Drawer -->
-<div id="drawer" class="drawer">
-  <div class="drawer-header">
-    <span>Menu</span>
-    <button id="drawer-close" class="drawer-close">✕</button>
+  <div id="drawer" class="drawer">
+    <div class="drawer-header">
+      <span>Menu</span>
+      <button id="drawer-close" class="drawer-close">✕</button>
+    </div>
+
+    <div class="drawer-menu">
+      <button class="drawer-item" onclick="navigateAndClose('home')">🏠 Home</button>
+      <button class="drawer-item" onclick="navigateAndClose('stalls')">🍔 Food & Stalls</button>
+      <button class="drawer-item" onclick="navigateAndClose('schedule')">🎤 Events Schedule</button>
+      <button class="drawer-item" onclick="navigateAndClose('annc')">📣 Announcements</button>
+      <button class="drawer-item" onclick="navigateAndClose('bazaarzones')">🗺️ Bazaar Zones</button>
+      <button class="drawer-item" onclick="navigateAndClose('emergency')">🚨 Emergency Contacts</button>
+      <button class="drawer-item" onclick="navigateAndClose('dosdonts')">ℹ️ Do's & Don'ts</button>
+
+    </div>
   </div>
 
-  <div class="drawer-menu">
-    <button class="drawer-item" onclick="navigateAndClose('home')">🏠 Home</button>
-    <button class="drawer-item" onclick="navigateAndClose('stalls')">🍔 Food & Stalls</button>
-    <button class="drawer-item" onclick="navigateAndClose('schedule')">🎤 Events Schedule</button>
-    <button class="drawer-item" onclick="navigateAndClose('annc')">📣 Announcements</button>
-    <button class="drawer-item" onclick="navigateAndClose('bazaarzones')">🗺️ Bazaar Zones</button>
-    <button class="drawer-item" onclick="navigateAndClose('emergency')">🚨 Emergency Contacts</button>
-    <button class="drawer-item" onclick="navigateAndClose('dosdonts')">ℹ️ Do's & Don'ts</button>
-
-  </div>
-</div>
-
-<!-- Backdrop for drawer -->
-<div id="drawer-backdrop" class="drawer-backdrop"></div>
+  <!-- Backdrop for drawer -->
+  <div id="drawer-backdrop" class="drawer-backdrop"></div>
 
   <main id="main">
     <!-- HOME -->
-  <section id="home" class="page active home-page">
+    <section id="home" class="page active home-page">
 
 
-  <!-- School Provided Banner Image -->
-<div class="home-banner">
-  <img src="banner.jpg" alt="School Carnival Banner" class="banner-img">
-</div>
+      <!-- School Provided Banner Image -->
+      <div class="home-banner">
+        <img src="banner.jpg" alt="School Carnival Banner" class="banner-img">
+      </div>
 
 
-  <div id="home-announcement" class="home-block">
-    <h3>🔔 Latest Announcement</h3>
-    <p id="home-latest-annc">—</p>
-  </div>
-
-  <section id="home-parking" class="home-block">
-  <h2>Parking Information</h2>
-
-  <!-- Parking Map Thumbnail -->
-  <img src="parking-map.jpg" class="parking-thumb" alt="Parking Map">
-
-  <!-- Parking Instructions Thumbnail -->
-  <img src="parking-instructions.jpg" class="parking-thumb" alt="Parking Instructions">
-
-  <button class="parking-view-btn" onclick="showPage('parking')">
-    View Full Parking Details →
-  </button>
-
-    <a id="home-venue-link" href="#" target="_blank" class="map-button">
-      Open Venue Location →
-  </a>
-
-</section>
+      <div id="home-announcement" class="home-block">
+        <h3>🔔 Latest Announcement</h3>
+        <p id="home-latest-annc">—</p>
+      </div>
 
 
-  <!-- <div id="home-event-header" class="home-block">
+      <!-- <div id="home-event-header" class="home-block">
     <h3 id="home-date">📅 —</h3>
     </div>
   </div>
@@ -87,24 +72,44 @@
     <span id="home-next-time" class="sub"></span>
   </div>-->
 
-  <!--<div id="home-stats" class="home-stats">
+      <!--<div id="home-stats" class="home-stats">
     <div class="stat">🍴 <span id="stat-stalls">0</span><br><small>Stalls</small></div>
     <div class="stat">🎭 <span id="stat-events">0</span><br><small>Events</small></div>
     <div class="stat">📣 <span id="stat-annc">0</span><br><small>Announcements</small></div>
   </div>-->
 
-  <!-- Feature Cards 2 per row -->
-  <div class="home-cards">
-    <button class="home-card" onclick="showPage('stalls')">🍔 Food & Stalls</button>
-    <button class="home-card" onclick="showPage('schedule')">🎤 Events Schedule</button>
-    <button class="home-card" onclick="showPage('bazaarzones')">🗺️ Bazaar Zones</button>
-    <button class="home-card" onclick="showPage('annc')">📣 Announcements</button>
-    <button class="home-card" onclick="showPage('emergency')">🚨 Emergency Contacts</button>
-    <button class="home-card" onclick="showPage('dosdonts')">ℹ️ Do's & Don'ts</button>
-  </div>
+      <!-- Feature Cards 2 per row -->
+      <div class="home-cards">
+        <button class="home-card" onclick="showPage('stalls')">🍔 Food & Stalls</button>
+        <button class="home-card" onclick="showPage('schedule')">🎤 Events Schedule</button>
+        <button class="home-card" onclick="showPage('bazaarzones')">🗺️ Bazaar Zones</button>
+        <button class="home-card" onclick="showPage('annc')">📣 Announcements</button>
+        <button class="home-card" onclick="showPage('emergency')">🚨 Emergency Contacts</button>
+        <button class="home-card" onclick="showPage('dosdonts')">ℹ️ Do's & Don'ts</button>
+      </div>
 
 
- <!--<div id="home-venue-parking" class="home-venue-section">
+      <section id="home-parking" class="home-block">
+        <h2>Parking Information</h2>
+
+        <!-- Parking Map Thumbnail -->
+        <img src="parking-map.jpg" class="parking-thumb" alt="Parking Map">
+
+        <!-- Parking Instructions Thumbnail -->
+        <img src="parking-instructions.jpg" class="parking-thumb" alt="Parking Instructions">
+
+        <button class="parking-view-btn" onclick="showPage('parking')">
+          View Full Parking Details →
+        </button>
+
+        <a id="home-venue-link" href="#" target="_blank" class="map-button">
+          Open Venue Location →
+        </a>
+
+      </section>
+
+
+      <!--<div id="home-venue-parking" class="home-venue-section">
   <h3>🗺️ Venue & Parking</h3>
   
   <img src="parking.jpg" alt="Parking Location" class="parking-image-full">
@@ -116,17 +121,17 @@
   </a>
 </div>-->
 
-<!--</div>-->
+      <!--</div>-->
 
 
-</section>
+    </section>
 
 
     <!-- STALLS -->
     <section id="stalls" class="page">
       <h2>Stalls (Food & Games)</h2>
       <h2 class="page-title">
-          <span class="back-btn" onclick="showPage('home')">←</span>
+        <span class="back-btn" onclick="showPage('home')">←</span>
       </h2>
 
       <div class="filter-row">
@@ -139,7 +144,7 @@
     <section id="schedule" class="page">
       <h2>Events Schedule</h2>
       <h2 class="page-title">
-          <span class="back-btn" onclick="showPage('home')">←</span>
+        <span class="back-btn" onclick="showPage('home')">←</span>
       </h2>
 
       <div id="schedule-list" class="list"></div>
@@ -149,7 +154,7 @@
     <section id="annc" class="page">
       <h2>Announcements</h2>
       <h2 class="page-title">
-          <span class="back-btn" onclick="showPage('home')">←</span>
+        <span class="back-btn" onclick="showPage('home')">←</span>
       </h2>
 
       <div id="annc-list" class="list"></div>
@@ -157,20 +162,20 @@
 
     <!-- MAP -->
     <section id="bazaarzones" class="page">
-       <h2>Bazaar Zones</h2>
+      <h2>Bazaar Zones</h2>
 
-       <div class="map-two-buttons">
-          <button class="map-btn-left" onclick="showPage('stalls')">← Food & Stalls</button>
-          <button class="map-btn-right" onclick="showPage('home')">Home 🏠</button>
+      <div class="map-two-buttons">
+        <button class="map-btn-left" onclick="showPage('stalls')">← Food & Stalls</button>
+        <button class="map-btn-right" onclick="showPage('home')">Home 🏠</button>
       </div>
 
-      
 
-     <div class="map-wrap">
+
+      <div class="map-wrap">
         <img id="map-image" src="map.jpg" alt="School Map" />
-    </div>
+      </div>
 
-     <!-- <div id="zone-info" class="zone-info">
+      <!-- <div id="zone-info" class="zone-info">
         <h3 id="zone-title">Select a cell</h3>
         <div id="zone-contents"></div>
       </div>-->
@@ -178,36 +183,36 @@
 
 
     <!-- EMERGENCY CONTACTS -->
-<section id="emergency" class="page">
-  <h2>Emergency Contacts</h2>
-  <h2 class="page-title">
-      <span class="back-btn" onclick="showPage('home')">←</span>
-  </h2>
-  <div id="emergency-list" class="list"></div>
-</section>
+    <section id="emergency" class="page">
+      <h2>Emergency Contacts</h2>
+      <h2 class="page-title">
+        <span class="back-btn" onclick="showPage('home')">←</span>
+      </h2>
+      <div id="emergency-list" class="list"></div>
+    </section>
 
-<!-- DO'S & DON'TS -->
-<section id="dosdonts" class="page">
-  <h2>Do's & Don'ts</h2>
-  <h2 class="page-title">
-      <span class="back-btn" onclick="showPage('home')">←</span>
-  </h2>
-  <div id="dosdonts-list" class="list"></div>
-</section>
+    <!-- DO'S & DON'TS -->
+    <section id="dosdonts" class="page">
+      <h2>Do's & Don'ts</h2>
+      <h2 class="page-title">
+        <span class="back-btn" onclick="showPage('home')">←</span>
+      </h2>
+      <div id="dosdonts-list" class="list"></div>
+    </section>
 
-<section id="parking" class="page">
-  
-  <div class="map-two-buttons">
-    <button class="map-btn-left" onclick="showPage('home')">🏠 Home</button>
-  </div>
+    <section id="parking" class="page">
 
-  <h2>Parking Map</h2>
-  <img src="parking-map.jpg" class="parking-full" alt="Parking Map">
+      <div class="map-two-buttons">
+        <button class="map-btn-left" onclick="showPage('home')">🏠 Home</button>
+      </div>
 
-  <h2>Parking Instructions</h2>
-  <img src="parking-instructions.jpg" class="parking-full" alt="Parking Instructions">
+      <h2>Parking Map</h2>
+      <img src="parking-map.jpg" class="parking-full" alt="Parking Map">
 
-</section>
+      <h2>Parking Instructions</h2>
+      <img src="parking-instructions.jpg" class="parking-full" alt="Parking Instructions">
+
+    </section>
 
 
   </main>
@@ -216,6 +221,7 @@
     <small>Built for Sloka Winter Bazaar (Ningi Nela) • Editable via Google Sheets</small>
   </footer>
 
-<script src="app.js"></script>
+  <script src="app.js"></script>
 </body>
+
 </html>

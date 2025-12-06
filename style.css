@@ -691,6 +691,15 @@ body, html {
   font-size: 0.9rem;
 }
 
+.page {
+  padding-top: 55px;
+}
+
+#home.page {
+  padding-top: 0px;
+}
+
+
 .parking-thumb {
   width: 100%;
   height: 200px;        /* or 180px or 220px */
