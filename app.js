@@ -47,7 +47,9 @@ const pages = {
   annc: document.getElementById("annc"),
   bazaarzones: document.getElementById("bazaarzones"),
   emergency: document.getElementById("emergency"),   // new
-  dosdonts: document.getElementById("dosdonts")      // new
+  dosdonts: document.getElementById("dosdonts"),      // new
+  parking: document.getElementById("parking"),
+
 };
 
 document.querySelectorAll(".nav-btn").forEach(btn=>{
@@ -66,7 +68,9 @@ function showPage(id){
   else if(id === "annc") pages.annc.classList.add("active");
   else if(id === "bazaarzones") pages.bazaarzones.classList.add("active");
   else if(id === "emergency") pages.emergency.classList.add("active");
-else if(id === "dosdonts") pages.dosdonts.classList.add("active");
+  else if(id === "dosdonts") pages.dosdonts.classList.add("active");
+  else if(id === "parking") pages.parking.classList.add("active");
+
 
 }
 
