@@ -221,63 +221,43 @@ async function loadAll(){
 
 function renderHomeDashboard() {
 
-  /* ----------- Home Sheet Data -------------- */
   const home = dataCache.home?.[0] || {};
-  document.getElementById("home-date").innerText =
-      `📅 ${home.date || ""} • ${home.time || ""}`;
-  /* ----------- Venue with Google Maps Link ----------- */
-  /* ----------- Venue Map Card ----------- */
-/* ----------- Venue Map Card ----------- */
-const venueName = document.getElementById("home-venue-name");
-const venueLink = document.getElementById("home-venue-link");
-const mapCard = document.getElementById("home-map-card");
-
-// If no venue provided → hide entire card
-if (!home.venue && !home.maps) {
-  mapCard.style.display = "none";
-  return;
-}
-
-// Show venue name
-venueName.innerText = home.venue || "Venue";
-
-// If Google Maps link exists → show button
-if (home.maps && home.maps.trim() !== "") {
-  venueLink.href = home.maps;
-  venueLink.style.display = "inline-block";
-}
-// If NO maps URL → hide button but keep venue visible
-else {
-  venueLink.style.display = "none";
-}
-
-
+  const announcements = dataCache.announcements || [];
 
   /* ----------- Latest Announcement ---------- */
-  const annc = dataCache.announcements;
-  if (annc.length) {
-    document.getElementById("home-latest-annc").innerText =
-      `${annc[annc.length - 1].title} — ${annc[annc.length - 1].message}`;
+  const anncBox = document.getElementById("home-announcement");
+  const anncText = document.getElementById("home-latest-annc");
+
+  if (anncText && announcements.length) {
+    const last = announcements[announcements.length - 1];
+    anncText.innerText = `${last.title} — ${last.message}`;
+    if (anncBox) anncBox.style.display = "block";
   } else {
-    document.getElementById("home-announcement").style.display = "none";
+    if (anncBox) anncBox.style.display = "none";
   }
 
-  /* ----------- Next Event ------------------- */
-  const events = dataCache.schedule;
-  const next = findNextEvent(events);
 
-if (next) {
-  document.getElementById("home-next-title").innerText = next.title || "";
-  document.getElementById("home-next-time").innerText =
-      `${next.time || ""} • ${next.stage || ""}`;
-} else {
-  document.getElementById("home-next-event").style.display = "none";
+  /* ----------- Venue Name ------------------- */
+  const venueName = document.getElementById("home-venue-name");
+  if (venueName) {
+    venueName.innerText = home.venue || "";
+  }
+
+  /* ----------- Google Maps Link ------------- */
+  const venueLink = document.getElementById("home-venue-link");
+  if (venueLink) {
+    if (home.maps) {
+      venueLink.href = home.maps;
+      venueLink.style.display = "inline-block";
+    } else {
+      venueLink.style.display = "none";
+    }
+  }
+
+  /* ----------- No next-event, no stats ------- */
+  /* These were removed in HTML so JS no longer touches them */
 }
-  /* ----------- Stats ------------------------ */
-  //document.getElementById("stat-stalls").innerText = dataCache.stalls.length;
-  //document.getElementById("stat-events").innerText = dataCache.schedule.length;
-  //document.getElementById("stat-annc").innerText = dataCache.announcements.length;
-}
+
 
 
 function renderStallsList() {
