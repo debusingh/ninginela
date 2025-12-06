@@ -637,3 +637,68 @@ body, html {
   font-weight: 600;
 }
 
+.parking-thumb {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 10px;
+}
+
+
+.parking-full {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 20px;
+}
+
+
+.parking-view-btn {
+  width: 100%;
+  padding: 10px;
+  background: #2563EB;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+
+.map-two-buttons {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 12px;
+}
+
+.map-btn-left,
+.map-btn-right {
+  padding: 8px 14px;
+  background: #2563EB;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  font-size: 0.9rem;
+  cursor: pointer;
+}
+
+.map-btn-left:hover,
+.map-btn-right:hover {
+  background: #1E40AF;
+}
+
+.map-button {
+  display: inline-block;
+  margin-top: 10px;
+  background: #2563EB;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+
+

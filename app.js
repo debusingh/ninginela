@@ -238,10 +238,10 @@ function renderHomeDashboard() {
 
 
   /* ----------- Venue Name ------------------- */
-  const venueName = document.getElementById("home-venue-name");
+  /*const venueName = document.getElementById("home-venue-name");
   if (venueName) {
     venueName.innerText = home.venue || "";
-  }
+  }*/
 
   /* ----------- Google Maps Link ------------- */
   const venueLink = document.getElementById("home-venue-link");
