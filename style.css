@@ -701,4 +701,8 @@ body, html {
   font-size: 0.9rem;
 }
 
+.page {
+  padding-top: 60px;   /* prevents header overlap */
+}
+
 
