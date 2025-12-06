@@ -355,7 +355,7 @@ function renderEmergencies(){
 
     el.innerHTML = `<div>
       <strong>${it.name || it.Name || "Unnamed"}</strong>
-      <div style="color:var(--muted)">${role} ${phone ? "• " + phone : ""}</div>
+      <div style="color:var(--muted)"><strong>${role}</strong> ${phone ? "• " + phone : ""}</div>
       <div style="margin-top:6px;color:var(--muted);font-size:0.95rem">${notes}</div>
     </div>
     <div style="text-align:right">
