@@ -637,16 +637,6 @@ body, html {
   font-weight: 600;
 }
 
-.parking-thumb {
-  width: 100%;
-  max-width: 100%;
-  height: auto;
-  border-radius: 10px;
-  display: block;
-  margin-bottom: 10px;
-}
-
-
 .parking-full {
   width: 100%;
   max-width: 100%;
@@ -701,17 +691,13 @@ body, html {
   font-size: 0.9rem;
 }
 
-.page {
-  padding-top: 60px;   /* prevents header overlap */
-}
-
 .parking-thumb {
   width: 100%;
-  height: 180px !important;
-  object-fit: cover !important;
-  object-position: center; /* or top */
+  height: 200px;        /* or 180px or 220px */
+  object-fit: cover;    /* auto crop */
+  border-radius: 10px;
   display: block;
+  margin-bottom: 10px;
 }
-
 
 
